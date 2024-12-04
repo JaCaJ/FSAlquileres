@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2671be3b-3baf-489f-8b19-5f7b74c4780e">
+	<property name="ireport.zoom" value="1.3310000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codigo" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM articulos art INNER JOIN articulo_tipo at ON art.articulo_tipo_id = at.articulo_tipo_id WHERE art_id = $P{codigo};]]>
+	</queryString>
+	<field name="art_id" class="java.lang.Integer"/>
+	<field name="art_nombre" class="java.lang.String"/>
+	<field name="art_precio" class="java.lang.Integer"/>
+	<field name="art_estado" class="java.lang.String"/>
+	<field name="art_existencia" class="java.lang.Integer"/>
+	<field name="articulo_tipo_id" class="java.lang.Integer"/>
+	<field name="articulo_tipo_descripcion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="69" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="555" height="69" uuid="430a1897-6d4a-47d2-832f-7db8f92384b6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="447" y="17" width="100" height="20" uuid="ef8c3b93-dcfe-4448-8175-0a74ed1e9d2c"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Generado el:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH:mm">
+				<reportElement x="447" y="37" width="100" height="20" uuid="2eb8d330-c368-43ea-9c14-969f79b60ab7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="134" y="14" width="221" height="40" uuid="43ec2b0d-9904-432a-82ea-769111027e0a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE ARTÍCULO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="267" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="9" width="555" height="258" uuid="2761f1eb-6605-410f-8c8b-cfcae88c7548"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="39" y="28" width="100" height="20" uuid="08b6e6d8-8c09-4ac8-9df7-03c76e542990"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="149" y="28" width="383" height="20" uuid="6b294abe-30cc-410f-9015-d71e2d27219e"/>
+				<textFieldExpression><![CDATA[$F{art_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="39" y="58" width="100" height="20" uuid="0ad6cac8-f536-45e4-89c3-7709bc1da1fb"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="149" y="58" width="383" height="20" uuid="3261517b-689a-4980-a9b9-d3dec7b61620"/>
+				<textFieldExpression><![CDATA[$F{art_nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="39" y="88" width="100" height="20" uuid="0b573d17-b6ab-40fe-be4d-b72413df9698"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[PRECIO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="149" y="88" width="383" height="20" uuid="ba7d7238-389f-4988-8676-d6e855bab64e"/>
+				<textFieldExpression><![CDATA[$F{art_precio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="39" y="118" width="100" height="20" uuid="aa959502-d8ab-4fba-9337-dc4a0419b9f2"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="149" y="118" width="383" height="20" uuid="7b1f6aaa-7741-4294-bd28-0d63bf5a58f2"/>
+				<textFieldExpression><![CDATA[$F{art_estado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="39" y="148" width="100" height="20" uuid="90d9aa4c-1a1e-4768-b3ce-1cb674e5299d"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[EXISTENCIA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="149" y="148" width="383" height="20" uuid="20d6519a-74a1-4522-86e3-d10dc257cf03"/>
+				<textFieldExpression><![CDATA[$F{art_existencia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="39" y="178" width="100" height="29" uuid="ffefc10d-ab3b-44be-a095-0621852ba636"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ID TIPO DE ARTÍCULO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="149" y="178" width="383" height="20" uuid="672af8bc-b988-4f60-a715-9943e83e635a"/>
+				<textFieldExpression><![CDATA[$F{articulo_tipo_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="38" y="217" width="100" height="20" uuid="0d6bee5b-7042-415c-96cd-8ec30a9a65a8"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCIÓN TIPO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="217" width="383" height="20" uuid="e348f085-585e-4be0-b389-07695e59ef3f"/>
+				<textFieldExpression><![CDATA[$F{articulo_tipo_descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

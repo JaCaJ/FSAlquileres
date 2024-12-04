@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c4ce4f43-378f-4f7d-bc91-b71131937d91">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codigo" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM usuarios usu INNER JOIN personales per ON usu_per_id_fk = per_id where usu_id = $P{codigo};]]>
+	</queryString>
+	<field name="usu_id" class="java.lang.Integer"/>
+	<field name="usu_nick" class="java.lang.String"/>
+	<field name="usu_clave" class="java.lang.String"/>
+	<field name="usu_rol" class="java.lang.String"/>
+	<field name="usu_per_id_fk" class="java.lang.Integer"/>
+	<field name="per_id" class="java.lang.Integer"/>
+	<field name="per_nombre" class="java.lang.String"/>
+	<field name="per_apellido" class="java.lang.String"/>
+	<field name="per_ci" class="java.lang.Integer"/>
+	<field name="per_telefono" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="555" height="53" uuid="2c4cfbde-4ca2-4094-b5f8-176d8e1dce3f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="157" y="15" width="237" height="25" uuid="8a6c3231-ad25-4ece-8364-344a00351016"/>
+				<textElement>
+					<font size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE USUARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="9" width="127" height="20" uuid="765753df-1124-4a3f-ac67-cca704e7cd2c"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporte generado el:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH:mm">
+				<reportElement x="430" y="33" width="100" height="20" uuid="3c0d231c-199f-491e-8c92-2542e63fd2a8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="230" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="555" height="230" uuid="eb854d66-582a-4deb-8c82-ecb30a686e52"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="29" y="12" width="79" height="20" uuid="10570d7c-4468-4db3-8425-a7d5e8ffe74a"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="12" width="357" height="20" uuid="74283d6a-5474-475e-8f8c-87552e9b2ecb"/>
+				<textFieldExpression><![CDATA[$F{usu_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="29" y="46" width="79" height="20" uuid="7bb6fd87-c23f-4972-9dee-a77d8d7bc796"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NICK]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="46" width="357" height="20" uuid="6dbb1c79-07cd-4f3c-8916-0e986622673e"/>
+				<textFieldExpression><![CDATA[$F{usu_nick}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="29" y="79" width="79" height="20" uuid="37e49e20-0806-4e96-9869-4c6ce1483748"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ROL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="79" width="357" height="20" uuid="6526d4c1-279f-429a-8742-1761b2451e5d"/>
+				<textFieldExpression><![CDATA[$F{usu_rol}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="29" y="114" width="79" height="20" uuid="a7739e82-b8a0-4ef3-9a60-5909f3c6faab"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ID PERSONAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="114" width="357" height="20" uuid="a9c1aed7-66cb-46ee-a796-4d0e0371caae"/>
+				<textFieldExpression><![CDATA[$F{per_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="28" y="153" width="79" height="20" uuid="34919b46-f548-446c-9fc9-18fcbb278ec3"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[CI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="128" y="153" width="357" height="20" uuid="56d33306-6c50-4250-86b4-ea1a50c9db71"/>
+				<textFieldExpression><![CDATA[$F{per_ci}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="28" y="188" width="79" height="20" uuid="aaafee15-191e-4415-8182-4a22a67a6d49"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="128" y="188" width="357" height="20" uuid="8902af00-300f-4fcd-b18c-8c1d54f237be"/>
+				<textFieldExpression><![CDATA[$F{per_telefono}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

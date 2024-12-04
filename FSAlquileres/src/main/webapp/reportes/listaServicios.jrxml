@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listaServicios" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f4fc394-4ad6-457a-8efd-640a4533d403">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM servicios WHERE NOT ser_id = 1;]]>
+	</queryString>
+	<field name="ser_id" class="java.lang.Integer"/>
+	<field name="ser_descripcion" class="java.lang.String"/>
+	<field name="ser_precio" class="java.lang.Integer"/>
+	<field name="ser_existencia" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy HH:mm">
+				<reportElement x="439" y="43" width="100" height="20" uuid="c9722376-a04c-489b-8bbf-2a05146aa873"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="87" y="16" width="401" height="24" uuid="50fc7b01-434b-443d-b9ad-70ca19f1c493"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE TODOS LOS SERVICIOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="43" width="100" height="20" uuid="13d16982-a092-407f-80ba-3ef707324315"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte del:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="0" width="141" height="20" uuid="adb738bb-b4c8-45c0-8981-30c20406645d"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="0" width="49" height="20" uuid="7a59c041-d51e-483e-9522-7c1cbc3f5662"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="21" width="554" height="1" uuid="1510ad47-608d-4a87-9cc5-a2208a4c41c5"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="234" y="0" width="141" height="20" uuid="2c610e91-f306-45ce-8d66-d5da221cd29d"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[PRECIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="1" width="100" height="20" uuid="60aba9ca-ebf5-47c3-9e98-9c21b653cf3c"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[EXISTENCIA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="21" width="554" height="1" uuid="5ae12e28-8f68-40d6-8d01-c9cc72eafe4d"/>
+			</line>
+			<textField>
+				<reportElement x="18" y="0" width="49" height="20" uuid="290e9282-a800-4285-9a2c-49af949b1b70"/>
+				<textFieldExpression><![CDATA[$F{ser_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="1" width="141" height="20" uuid="7af827b2-2c79-41bd-a333-0db4acf3fce4"/>
+				<textFieldExpression><![CDATA[$F{ser_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="1" width="141" height="20" uuid="004928c0-3ae7-492b-affe-a101f775802a"/>
+				<textFieldExpression><![CDATA[$F{ser_precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="4" width="100" height="20" uuid="cbf87060-9aca-4b6e-878e-7f330a0270e0"/>
+				<textFieldExpression><![CDATA[$F{ser_existencia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="427" y="4" width="80" height="20" uuid="c15d7b63-9909-4d10-b9a2-c9e87cd33f1c"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="507" y="4" width="40" height="20" uuid="dbb47100-ce85-4c66-9c0f-ea109ca57c5c"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,37 @@
+.iHover {
+    font-size: 1.4em; /* Aumenta el tamaño a 1.5 veces el tamaño original */
+}
+.iHover:hover {
+    cursor: pointer;
+}
+.blanco{
+    color : white;
+}
+
+
+/* Colores personalizados para los iconos */
+.text-green {
+    color: green;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-white {
+    color: white;
+}
+
+#resultado {
+    table-layout: auto; /* Permite que las columnas ajusten su ancho automáticamente */
+    width: 100%; /* Hace que la tabla use el ancho completo del contenedor */
+}
+#resultado td, #resultado th {
+    white-space: nowrap; /* Evita que el texto se ajuste automáticamente a nuevas líneas */
+    word-break: break-all; /* Fuerza la división de palabras largas para evitar deformaciones */
+    overflow: hidden; /* Oculta el texto desbordante */
+    text-overflow: ellipsis; /* Añade puntos suspensivos al texto desbordante */
+}
+.table-responsive {
+    overflow-x: auto; /* Asegura que haya un desplazamiento horizontal si es necesario */
+}

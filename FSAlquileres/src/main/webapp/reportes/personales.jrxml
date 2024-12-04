@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4de114f2-44f5-43ca-b1c0-5d0b9edcd4e4">
+	<property name="ireport.zoom" value="1.3310000000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codigo" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select * from personales where per_id = $P{codigo};]]>
+	</queryString>
+	<field name="per_id" class="java.lang.Integer"/>
+	<field name="per_nombre" class="java.lang.String"/>
+	<field name="per_apellido" class="java.lang.String"/>
+	<field name="per_ci" class="java.lang.Integer"/>
+	<field name="per_telefono" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="555" height="51" uuid="085c87de-f6c3-44b8-a01f-004390a73b24"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="140" y="11" width="259" height="27" uuid="b258fbfd-5c46-4155-9ac7-c2dae5bc5605"/>
+				<textElement>
+					<font size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE PERSONAL]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH:mm">
+				<reportElement x="425" y="28" width="126" height="14" uuid="d064fa93-4b08-43a1-a76f-363889ec72cd"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="425" y="11" width="126" height="14" uuid="9fce5f10-51ff-44b4-834c-6ca12ee187ff"/>
+				<textElement>
+					<font isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Reporte generado el:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="230" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="555" height="226" uuid="bd69c630-85e6-4133-ba6c-dfca074b04cc"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="38" y="24" width="100" height="20" uuid="3bc0c0e1-0925-4c5e-81a8-14f6610e9c3a"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="148" y="24" width="360" height="20" uuid="7da5bd7e-0ac4-44aa-98d0-a14fa80059e5"/>
+				<textFieldExpression><![CDATA[$F{per_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="65" width="100" height="20" uuid="db4cb632-4f8f-48db-b1af-15304182af48"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="147" y="65" width="360" height="20" uuid="825a3f63-dd3d-4550-92f3-e7c58a0bae76"/>
+				<textFieldExpression><![CDATA[$F{per_nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="102" width="100" height="20" uuid="67c1ccda-4ee9-4718-8e04-07b2b48c546d"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="146" y="102" width="360" height="20" uuid="43847181-3110-4834-b304-c29c6b29e2a1"/>
+				<textFieldExpression><![CDATA[$F{per_apellido}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="141" width="100" height="20" uuid="6ed0467a-8aa5-4b53-a214-9c60a013f6e5"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[CI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="146" y="141" width="360" height="20" uuid="870b0c47-2f2a-453b-9586-555bc03ff19f"/>
+				<textFieldExpression><![CDATA[$F{per_ci}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="178" width="100" height="20" uuid="69872d3c-1629-42a5-8d01-488a9df13e44"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="147" y="178" width="360" height="20" uuid="276d5f7b-7ac6-490b-9321-07579f2c69e4"/>
+				<textFieldExpression><![CDATA[$F{per_telefono}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
